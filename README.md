@@ -9,14 +9,18 @@ Template para Trabalhos Interdisciplinares (TI) do curso de Ciencia da Computaca
 
 ## Alunos integrantes da equipe
 
-* [Nome completo do aluno 1]
-* [Nome completo do aluno 2]
-* [Adicione ou remova integrantes conforme a equipe]
+* Gabriel Chaves Mendes
+* Guilherme Henrique da Silva Teodoro
+* Marcella Santos Belchior
+* Matheus de Almeida Moreira
+* Yasmin Torres Moreira dos Santos
 
 ## Professores responsaveis
 
-* [Nome completo do professor 1]
-* [Nome completo do professor 2]
+* Felipe Domingos da Cunha
+* Luís Fabrício Wanderley Góes
+* Matheus Alcântara Souza
+* Max do Val Machado
 
 ## Resumo
 
