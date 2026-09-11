@@ -1,0 +1,12 @@
+schema: "classroom50/repo-config/v1"
+classroom: "plmg-cc-2026-2-ti5"
+assignment: "plmg-cc-2026-2-ti5"
+owner:
+  username: "matheusmra"
+  id: 69125506
+  accepted_at: "2026-09-11T10:16:27Z"
+source:
+  owner: "ICEI-PUC-Minas-CC-TI"
+  owner_id: 60940181
+  repo: "template"
+  branch: "main"
