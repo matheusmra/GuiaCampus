@@ -1,4 +1,4 @@
-# GuiaCampus - Óculos IoT para navegação assistida de deficientes visuais
+# 👓 GuiaCampus - Óculos IoT para navegação assistida de deficientes visuais
 
 ## Alunos integrantes da equipe
 
@@ -59,11 +59,11 @@ A arquitetura do GuiaCampus é dividida em três camadas principais:
 * **Simulação e Modelagem:** Autodesk Tinkercad (validação lógica e esquemática), Software de Fatiamento 3D (para a estrutura do óculos EPI)
 * **Ferramentas:** IDE compatível (Arduino IDE), Git e GitHub (Versionamento e repositório)
 
-## Instrucoes de utilizacao
+## Instrucoes de utilização
 
 Em breve...
 
-## Estrutura do repositorio
+## Estrutura do repositório
 
 * **`/Codigo`** - Codigo-fonte, scripts, notebooks, testes, dados de exemplo e demais arquivos necessarios para executar ou reproduzir a solucao computacional. Organize esta pasta conforme as exigencias da disciplina e a natureza do projeto.
 * **`/Documentacao`** - Relatorios, requisitos, arquitetura, metodologia e documentacao tecnica.
