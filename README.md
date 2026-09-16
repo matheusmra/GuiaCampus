@@ -1,4 +1,4 @@
-# 👓 GuiaCampus - Óculos IoT para navegação assistida de deficientes visuais
+#  GuiaCampus - Óculos IoT para navegação assistida de deficientes visuais 👓
 
 ## Alunos integrantes da equipe
 
