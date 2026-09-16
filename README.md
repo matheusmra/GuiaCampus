@@ -59,7 +59,7 @@ A arquitetura do GuiaCampus é dividida em três camadas principais:
 * **Simulação e Modelagem:** Autodesk Tinkercad (validação lógica e esquemática), Software de Fatiamento 3D (para a estrutura do óculos EPI)
 * **Ferramentas:** IDE compatível (Arduino IDE), Git e GitHub (Versionamento e repositório)
 
-## Instrucoes de utilização
+## Instrções de utilização
 
 Em breve...
 
