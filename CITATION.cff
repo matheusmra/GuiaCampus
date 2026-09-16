@@ -1,37 +1,46 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
 # title: Sigla/Nome + descricao curta (ate 80 caracteres)
-title: "[SIGLA/Nome] - Descricao curta do projeto (ate 80 caracteres)"
+title: "[TI5/GuiaCampus] - Óculos IoT para navegação assistida"
 # abstract: Descricao completa do projeto (ate 500 caracteres)
-abstract: "[Descricao completa do projeto, ate 500 caracteres. Descreva o objetivo, a solucao proposta, as tecnologias utilizadas e os principais resultados.]"
+abstract: "O GuiaCampus é um óculos inteligente (wearable) que atua como tecnologia assistiva para deficientes visuais. O dispositivo utiliza sensores ToF e IMU para mapear obstáculos e a postura do usuário, fornecendo feedback tátil imediato. Integrando Arquitetura, Redes (MQTT/I2C) e Sistemas Operacionais (FreeRTOS), o projeto funciona como um nó IoT de tempo real que previne colisões na altura da cabeça e monitora quedas, aumentando a autonomia e a segurança do usuário."
 # Adicione ou remova autores conforme a composicao da equipe.
 # Para cada integrante, preencha family-names com o sobrenome e given-names com os demais nomes.
 # Mantenha os professores como autores quando essa for a orientacao da disciplina.
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Mendes
+    given-names: Gabriel Chaves
+  - family-names: Teodoro
+    given-names: Guilherme Henrique da Silva
+  - family-names: Belchior
+    given-names: Marcella Santos
+  - family-names: Moreira
+    given-names: Matheus de Almeida
+  - family-names: Santos
+    given-names: Yasmin Torres Moreira dos
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Cunha
+    given-names: Felipe Domingos da
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Góes
+    given-names: Luís Fabrício Wanderley
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Souza
+    given-names: Matheus Alcântara
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Machado
+    given-names: Max do Val
 keywords:
-  - 
-  - 
-repository-code: 
+  - Acessibilidade
+  - Internet das Coisas
+  - Wearable
+  - FreeRTOS
+  - ESP32
+repository-code: https://github.com/ICEI-PUC-Minas-CC-TI/plmg-cc-2026-2-ti5-plmg-cc-2026-2-ti5-group-2 
 license: CC-BY-4.0
 version: 1.0.0
 date-released: 2026-02-27
