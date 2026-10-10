@@ -1,4 +1,4 @@
-#  GuiaCampus - Óculos IoT para navegação assistida de deficientes visuais 👓
+# GuiaCampus - Óculos IoT para navegação assistida de deficientes visuais
 
 ## Alunos integrantes da equipe
 
@@ -53,19 +53,42 @@ A arquitetura do GuiaCampus é dividida em três camadas principais:
 
 ## Tecnologias utilizadas
 
-* **Linguagens:** C/C++
+* **Linguagens:** C/C++ (firmware) e TypeScript (aplicação web)
 * **Sistema Operacional:** FreeRTOS
-* **Protocolos e Comunicação:** I2C, MQTT, Wi-Fi
+* **Protocolos e Comunicação:** I2C, Bluetooth Low Energy (BLE), MQTT, Wi-Fi
+* **Aplicação web:** Next.js, React, Tailwind CSS, shadcn/ui, Recharts, Zod, Vitest e Web Bluetooth
 * **Simulação e Modelagem:** Autodesk Tinkercad (validação lógica e esquemática), Software de Fatiamento 3D (para a estrutura do óculos EPI)
 * **Ferramentas:** IDE compatível (Arduino IDE), Git e GitHub (Versionamento e repositório)
 
-## Instrções de utilização
+## Instruções de utilização
 
-Em breve...
+O código está dividido em duas partes, que se comunicam por BLE. Detalhes completos em [`Codigo/README.md`](Codigo/README.md).
+
+### Firmware (ESP32)
+
+1. Instale o Arduino IDE com o pacote **esp32 by Espressif Systems** e a biblioteca **Adafruit VL53L0X**.
+2. Abra [`Codigo/esp32/guiacampus/guiacampus.ino`](Codigo/esp32/guiacampus/guiacampus.ino), selecione a placa ESP32-C3 e grave o sketch.
+3. O dispositivo passa a anunciar **GuiaCampus-01** por BLE.
+
+Pinagem, calibração da IMU e demais detalhes em [`Codigo/esp32/README.md`](Codigo/esp32/README.md).
+
+### Aplicação web de monitoramento
+
+Requisitos: Node.js 22.12+ e npm.
+
+```bash
+cd Codigo/web
+npm ci
+npm run dev
+```
+
+Abra <http://localhost:3000> no Chrome e selecione **Real -> Conectar BLE -> GuiaCampus-01**. O modo **Demonstração** funciona sem o hardware. Protocolo BLE, testes e limitações em [`Codigo/web/README.md`](Codigo/web/README.md).
 
 ## Estrutura do repositório
 
-* **`/Codigo`** - Codigo-fonte, scripts, notebooks, testes, dados de exemplo e demais arquivos necessarios para executar ou reproduzir a solucao computacional. Organize esta pasta conforme as exigencias da disciplina e a natureza do projeto.
+* **`/Codigo`** - Código-fonte da solução, dividido em:
+  * **`/Codigo/esp32`** - Firmware C++ (Arduino/ESP32) dos óculos: leitura dos sensores, acionamento do motor e transmissão BLE.
+  * **`/Codigo/web`** - Aplicação web (Next.js) para monitoramento e diagnóstico da telemetria via Web Bluetooth, com testes automatizados.
 * **`/Documentacao`** - Relatorios, requisitos, arquitetura, metodologia e documentacao tecnica.
 * **`/Artefatos`** - Atas, canvas, diagramas, prototipos, especificacoes e demais artefatos produzidos.
 * **`/Divulgacao`** - Apresentacoes, videos, imagens e materiais de divulgacao.

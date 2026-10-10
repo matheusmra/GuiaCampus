@@ -1,0 +1,16 @@
+# Arquivos locais do sistema
+.DS_Store
+
+# Dependências, builds e caches da aplicação
+Codigo/web/node_modules/
+Codigo/web/.next/
+Codigo/web/out/
+Codigo/web/coverage/
+Codigo/web/*.tsbuildinfo
+Codigo/web/next-env.d.ts
+Codigo/web/*.log
+
+# Configuração local; exemplos podem ser versionados
+.env
+.env.*
+!.env.example

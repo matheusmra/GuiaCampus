@@ -1,0 +1,16 @@
+import { CircuitBoard, Cpu, Radio, Vibrate } from 'lucide-react';
+import type { Connection, Sample, Telemetry } from '@/lib/telemetry/types';
+import { number, time } from '@/lib/utils';
+export function DeviceHealth({ data, history, connection, lastUpdate, age, detailed = false, paused }: { data: Telemetry | null; history: Sample[]; connection: Connection; lastUpdate: number | null; age: number | null; detailed?: boolean; paused: boolean }) {
+ const distance = data?.sensors.vl53l0x;
+ const lastValid = history.findLast(s => s.telemetry.sensors.vl53l0x?.valid);
+ const lastIMU = history.findLast(s => s.telemetry.sensors.mpu6500);
+ const state = (exists: boolean, valid = true) => paused ? 'Pausado' : connection === 'offline' ? 'Offline' : !exists ? 'Sem dados' : !valid ? 'Medição inválida' : 'Operacional';
+ const devices = [
+  { name: 'VL53L0X', subtitle: 'Sensor de distância', icon: Radio, status: state(!!distance && distance.range_status !== 127, true), details: [['Endereço I2C', '0x29'], ['RangeStatus', distance?.range_status === 127 ? '127 · desconhecido' : distance?.range_status ?? '—'], ['Última leitura válida', lastValid ? `${number(lastValid.telemetry.sensors.vl53l0x!.distance_mm! / 10)} cm · ${time(lastValid.receivedAt)}` : 'Sem dados']] },
+  { name: 'MPU6500', subtitle: 'Sensor inercial · 6 eixos', icon: CircuitBoard, status: state(!!data?.sensors.mpu6500), details: [['Endereço I2C', '0x68'], ['WHO_AM_I', data?.sensors.mpu6500?.who_am_i !== undefined ? `0x${data.sensors.mpu6500.who_am_i.toString(16).toUpperCase()}` : 'Não informado (esperado 0x70)'], ['Última atualização', lastIMU ? time(lastIMU.receivedAt) : 'Sem dados']] },
+  { name: 'Coin Motor 1027', subtitle: 'Atuador háptico · GPIO 3', icon: Vibrate, status: state(!!data), details: [['Estado', data ? data.actuator.motor_active ? 'Acionado' : 'Em espera' : 'Sem dados'], ['PWM aplicado', data ? data.actuator.motor_active ? data.actuator.pwm : 0 : '—'], ['PWM configurado', data?.actuator.configured_pwm ?? data?.actuator.pwm ?? '—'], ['Controle', 'Local · independente de BLE']] },
+  { name: 'ESP32-C3 Mini', subtitle: 'Microcontrolador · Bluetooth LE', icon: Cpu, status: state(!!data), details: [['Última telemetria', lastUpdate ? time(lastUpdate) : 'Sem dados'], ['Tempo sem atualizar', age === null ? '—' : `${age} s`], ['Uptime do dispositivo', data?.timestamp_ms != null ? `${Math.floor(data.timestamp_ms / 3600000)}h ${Math.floor(data.timestamp_ms / 60000) % 60}min ${Math.floor(data.timestamp_ms / 1000) % 60}s` : 'Não transmitido pelo BLE']] },
+ ];
+ return <section className={`panel health-panel ${detailed ? 'detailed' : ''}`}><div className="panel-heading"><h2><CircuitBoard size={17}/>Diagnóstico do hardware</h2><span className="muted-text">Barramento I2C · SDA 6 / SCL 7</span></div><div className="health-grid">{devices.map(device => <div className="health-device" key={device.name}><div className="health-device-top"><device.icon size={19}/><span className={`health-status ${device.status === 'Operacional' ? 'healthy' : device.status === 'Offline' ? 'unhealthy' : 'uncertain'}`}><i/>{device.status}</span></div><strong>{device.name}</strong><span className="health-subtitle">{device.subtitle}</span>{detailed && <dl>{device.details.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}</div>)}</div></section>;
+}
