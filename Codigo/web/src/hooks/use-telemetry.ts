@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import { BleTelemetryClient, bluetoothSupport, type BleStatus } from '@/lib/telemetry/ble-client';
 import { demoHistory, mockTelemetry } from '@/lib/telemetry/mock';
 import { appendHistory, transitions } from '@/lib/telemetry/events';
-import { FallDetector, type FallAlert } from '@/lib/telemetry/fall';
 import type { Connection, Mode, Sample, Scenario, Telemetry, TelemetryEvent } from '@/lib/telemetry/types';
 export function useTelemetry(mode: Mode, interval: number, paused: boolean, scenario: Scenario) {
   const [data, setData] = useState<Telemetry | null>(null);
@@ -14,8 +13,6 @@ export function useTelemetry(mode: Mode, interval: number, paused: boolean, scen
   const [lastUpdate, setLastUpdate] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [clock, setClock] = useState(0);
-  const [fallAlert, setFallAlert] = useState<FallAlert | null>(null);
-  const fallDetector = useRef(new FallDetector());
   const client = useRef<BleTelemetryClient | null>(null);
   const previous = useRef<Telemetry | null>(null);
   const connected = useRef<Connection>('loading');
@@ -42,8 +39,6 @@ export function useTelemetry(mode: Mode, interval: number, paused: boolean, scen
       else if (now - lastDeviceChange.current > 3000) { fail('Telemetria estagnada: o timestamp do dispositivo não avança.'); return; }
       lastReceived.current = now;
       const changes = transitions(previous.current, current, now);
-      const fall = fallDetector.current.push(current, now);
-      if (fall) { changes.push({ id: `${now}-fall`, timestamp: now, kind: 'fall', source: 'MPU6500', description: `Possível queda detectada · pico ${fall.peakAcceleration.toFixed(1)} m/s², giro ${fall.peakGyro.toFixed(0)} °/s, inclinação ${fall.tilt.toFixed(0)}°.`, level: 'error' }); setFallAlert(fall); }
       if (connected.current !== 'online') changes.push({ id: `${now}-connection`, timestamp: now, kind: 'connection', source: mode === 'demo' ? 'Simulador' : 'BLE', description: connected.current === 'offline' ? 'Telemetria restabelecida.' : mode === 'demo' ? 'Sessão de demonstração iniciada.' : 'Telemetria BLE recebida.', level: 'info' });
       push(changes); previous.current = current; connected.current = 'online';
       setData(current); setConnection('online'); setLastUpdate(now); setError(null);
@@ -84,5 +79,5 @@ export function useTelemetry(mode: Mode, interval: number, paused: boolean, scen
   return { data, history, events, connection, lastUpdate, error, bleStatus,
     connectBle: () => { setError(null); void client.current?.requestConnect(); },
     disconnectBle: () => { client.current?.disconnect(); setData(null); setError(null); },
-    age: lastUpdate ? Math.max(0, Math.floor(((clock || Date.now()) - lastUpdate) / 1000)) : null, clearEvents: () => setEvents([]), fallAlert, dismissFall: () => setFallAlert(null) };
+    age: lastUpdate ? Math.max(0, Math.floor(((clock || Date.now()) - lastUpdate) / 1000)) : null, clearEvents: () => setEvents([]) };
 }
