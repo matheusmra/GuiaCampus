@@ -13,7 +13,7 @@
   --gc-border: #D5E6F7;
   --gc-stage: #BFE0F8;
   --gc-navy-soft: #2D3F87;
-  --gc-font: var(--font-sans), "Plus Jakarta Sans", system-ui, sans-serif;
+  --gc-font: "Plus Jakarta Sans", system-ui, sans-serif;
   --gc-radius-panel: 28px;
   --gc-radius-card: 22px;
   --gc-radius-pill: 999px;
