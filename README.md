@@ -89,6 +89,6 @@ Abra <http://localhost:3000> no Chrome e selecione **Real -> Conectar BLE -> Gui
 * **`/Codigo`** - Código-fonte da solução, dividido em:
   * **`/Codigo/esp32`** - Firmware C++ (Arduino/ESP32) dos óculos: leitura dos sensores, acionamento do motor e transmissão BLE.
   * **`/Codigo/web`** - Aplicação web (Next.js) para monitoramento e diagnóstico da telemetria via Web Bluetooth, com testes automatizados.
-* **`/Documentacao`** - Relatorios, requisitos, arquitetura, metodologia e documentacao tecnica.
+* **`/Documentacao`** - Relatorios, requisitos, arquitetura, metodologia e documentacao tecnica (com referencias bibliograficas em `/Documentacao/referencias`).
 * **`/Artefatos`** - Atas, canvas, diagramas, prototipos, especificacoes e demais artefatos produzidos.
-* **`/Divulgacao`** - Apresentacoes, videos, imagens e materiais de divulgacao.
+* **`/Divulgacao`** - Apresentacoes, videos, imagens e identidade visual (logos oficiais em `/Divulgacao/logos`).

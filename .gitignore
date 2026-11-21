@@ -14,3 +14,7 @@ Codigo/web/*.log
 .env
 .env.*
 !.env.example
+
+# Artefatos locais de ferramentas de design/revisão
+.impeccable/
+Codigo/web/.impeccable/

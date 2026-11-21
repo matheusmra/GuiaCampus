@@ -15,8 +15,8 @@
 
 #define MPU_ADDR 0x68
 
-const int SDA_PIN = 6;
-const int SCL_PIN = 7;
+const int SDA_PIN = 7;
+const int SCL_PIN = 6;
 const int MOTOR_PIN = 3;
 
 // Configuracoes originais

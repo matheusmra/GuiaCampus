@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1408" height="1054" viewBox="0 0 1408 1054" role="img" aria-labelledby="title desc">
+<title id="title">Cobertura complementar do GuiaCampus</title>
+<desc id="desc">Pessoa caminhando com mochila, óculos com sensor frontal detectando um obstáculo na altura do rosto a até 50 centímetros e bengala branca e vermelha explorando o piso.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#f5faff"/>
+    <stop offset="0.55" stop-color="#edf6fd"/>
+    <stop offset="1" stop-color="#f6fbff"/>
+  </linearGradient>
+  <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#5BB5F5" stop-opacity="0.22"/>
+    <stop offset="0.78" stop-color="#5BB5F5" stop-opacity="0.52"/>
+    <stop offset="1" stop-color="#5BB5F5" stop-opacity="0.62"/>
+  </linearGradient>
+  <linearGradient id="obstacle" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fde8e8"/>
+    <stop offset="1" stop-color="#fae2e6"/>
+  </linearGradient>
+  <linearGradient id="note" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#d8ebff"/>
+    <stop offset="1" stop-color="#e2f0ff"/>
+  </linearGradient>
+  <linearGradient id="pants" x1="0" y1="0" x2="0.8" y2="1">
+    <stop offset="0" stop-color="#193875"/>
+    <stop offset="1" stop-color="#0B1E6B"/>
+  </linearGradient>
+</defs>
+
+<!-- Background card -->
+<rect x="6" y="7" width="1396" height="1040" rx="47" fill="url(#bg)" stroke="#b8dcfb" stroke-width="3.5"/>
+
+<!-- Forward ToF sensor beam and suspended obstacle -->
+<path d="M312 178 L1064 114 L1064 298 Z" fill="url(#beam)"/>
+<path d="M314 185 L1060 198" fill="none" stroke="#0A4FE0" stroke-width="6.5" stroke-dasharray="14 10" stroke-linecap="round"/>
+<rect x="1064" y="114" width="104" height="190" rx="22" fill="url(#obstacle)" stroke="#D92D20" stroke-width="7"/>
+<text x="1116" y="352" text-anchor="middle" fill="#0B1E6B" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="46" font-weight="800">Obstáculo</text>
+
+<!-- Distance bracket -->
+<path d="M370 386 V420 M370 403 H1044 M1044 386 V420" stroke="#0B1E6B" stroke-width="4" fill="none" stroke-linecap="square"/>
+<text x="707" y="472" text-anchor="middle" fill="#0A4FE0" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="48" font-weight="800">Distância ≤ 50 cm</text>
+
+<!-- Person (clean vector profile matching GuiaCampus visual identity) -->
+<g stroke-linecap="round" stroke-linejoin="round">
+  <!-- Backpack -->
+  <path d="M168 272 C136 274 114 294 108 324 L98 402 C95 426 106 438 128 438 L174 438 L190 296 Z" fill="#0B1E6B" stroke="#0B1E6B" stroke-width="6"/>
+  <path d="M144 296 C128 318 121 356 125 390" fill="none" stroke="#FFFFFF" stroke-width="8"/>
+
+  <!-- Back shoe (heel slightly lifted, toe on floor y=783) -->
+  <path d="M106 704 L134 714 L130 732 C142 744 160 755 174 764 C182 770 180 783 166 783 L102 783 C88 783 76 774 74 763 C72 753 84 736 100 718 Z" fill="#FFFFFF" stroke="#0B1E6B" stroke-width="6.5"/>
+  <path d="M98 724 C109 730 120 731 130 726" fill="none" stroke="#0B1E6B" stroke-width="5"/>
+
+  <!-- Back leg -->
+  <path d="M174 448 L244 456 L204 590 L146 716 L96 694 L138 578 L156 490 Z" fill="#173570" stroke="#0B1E6B" stroke-width="6"/>
+
+  <!-- Front shoe (flat on floor y=783) -->
+  <path d="M276 720 L312 720 L316 742 C332 749 354 753 372 759 C384 763 388 773 382 779 C377 783 368 783 354 783 L286 783 C276 783 272 777 273 768 Z" fill="#FFFFFF" stroke="#0B1E6B" stroke-width="6.5"/>
+  <path d="M278 738 C291 741 304 740 315 734" fill="none" stroke="#0B1E6B" stroke-width="5"/>
+
+  <!-- Front leg -->
+  <path d="M176 444 L274 448 L296 594 L322 720 L264 734 L224 612 L176 520 Z" fill="url(#pants)" stroke="#0B1E6B" stroke-width="6"/>
+
+  <!-- Torso / Shirt -->
+  <path d="M196 250 L248 258 C268 274 278 302 282 336 L292 448 C252 458 202 456 154 450 L162 328 C164 294 176 266 196 250 Z" fill="#FFFFFF" stroke="#0B1E6B" stroke-width="6.5"/>
+
+  <!-- Neck & clean shirt collar -->
+  <path d="M202 214 L244 220 L246 256 L200 256 Z" fill="#FFFFFF" stroke="#0B1E6B" stroke-width="6"/>
+  <path d="M192 252 L224 274 L250 258" fill="#FFFFFF" stroke="#0B1E6B" stroke-width="6"/>
+
+  <!-- Backpack shoulder strap -->
+  <path d="M170 274 C186 268 204 282 214 316 C220 338 220 362 214 382" fill="none" stroke="#0B1E6B" stroke-width="13"/>
+  <path d="M174 278 C188 278 202 292 209 322" fill="none" stroke="#FFFFFF" stroke-width="4.5"/>
+
+  <!-- Head profile -->
+  <path d="M204 148 C218 144 242 134 268 134 C284 134 295 148 296 172 L301 185 C303 190 299 194 294 195 L293 207 C291 224 278 238 260 238 C246 238 234 231 222 224 L204 218 L200 198 C188 197 180 189 182 177 C183 166 192 162 200 166 Z" fill="#FFFFFF" stroke="#0B1E6B" stroke-width="6.5"/>
+  <!-- Ear inner curve -->
+  <path d="M196 174 C190 175 188 183 194 188" fill="none" stroke="#0B1E6B" stroke-width="4.5"/>
+
+  <!-- Hair (smooth single silhouette) -->
+  <path d="M180 198 C162 186 154 162 158 138 C163 110 186 92 218 90 C240 89 258 95 270 100 C286 98 302 108 302 124 C302 136 293 144 282 146 C272 134 256 130 236 136 C218 141 206 152 202 168 C194 162 184 166 182 176 C180 186 186 194 194 196 Z" fill="#0B1E6B" stroke="#0B1E6B" stroke-width="4"/>
+
+  <!-- Smart glasses on face (with temple arm to ear) -->
+  <path d="M196 172 L284 170" fill="none" stroke="#0A4FE0" stroke-width="7"/>
+  <rect x="280" y="160" width="34" height="32" rx="9" fill="#0A4FE0" stroke="#0B1E6B" stroke-width="3"/>
+  <circle cx="305" cy="176" r="4" fill="#F2B705"/>
+
+  <!-- Forearm and hand gripping cane -->
+  <path d="M222 364 L268 424 L318 468 L342 490 C350 498 350 512 342 520 C334 527 322 526 314 519 L292 496 L246 456 L196 402 Z" fill="#FFFFFF" stroke="#0B1E6B" stroke-width="6.5"/>
+  <!-- Hand finger crease -->
+  <path d="M312 498 C320 506 328 511 336 513" fill="none" stroke="#0B1E6B" stroke-width="4.5"/>
+
+  <!-- Short sleeve (cleanly attached to shoulder, overlapping upper arm) -->
+  <path d="M194 276 C218 274 238 292 248 320 L264 364 L204 384 L182 324 C178 302 182 282 194 276 Z" fill="#FFFFFF" stroke="#0B1E6B" stroke-width="6.5"/>
+</g>
+
+<!-- Cane (navy upper shaft + red lower tip) -->
+<path d="M338 514 L616 780" stroke="#0B1E6B" stroke-width="9" fill="none" stroke-linecap="round"/>
+<path d="M554 720 L616 780" stroke="#D92D20" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+<!-- Floor and yellow tactile paving strip -->
+<path d="M54 783 H1352" stroke="#0B1E6B" stroke-width="9" stroke-linecap="round"/>
+<path d="M148 783 H536" stroke="#F2B705" stroke-width="15" stroke-linecap="round"/>
+
+<!-- Cane callout -->
+<path d="M510 680 L562 630 H630" fill="none" stroke="#0B1E6B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="510" cy="680" r="9" fill="#0B1E6B"/>
+<text x="646" y="647" fill="#0B1E6B" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="44" font-weight="800">Bengala (solo)</text>
+
+<!-- Explanation banner -->
+<rect x="38" y="852" width="1332" height="140" rx="31" fill="url(#note)"/>
+<text x="84" y="912" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="36" fill="#0B1E6B">
+  <tspan font-weight="800">Cobertura complementar:</tspan><tspan dx="10" font-weight="500">o feixe frontal atua na altura do rosto,</tspan>
+  <tspan x="84" dy="48" font-weight="500">enquanto a bengala explora o piso.</tspan>
+</text>
+</svg>
