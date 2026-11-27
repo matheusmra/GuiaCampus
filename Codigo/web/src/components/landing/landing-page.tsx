@@ -282,8 +282,7 @@ export function LandingPage() {
                 <h3>Escopo entregue neste MVP BLE</h3>
                 <p>
                   Monitoramento em tempo real via Web Bluetooth (1x VL53L0X, 1x MPU6500 e 1x Coin Motor 1027), modo
-                  Demonstração com cenários de teste, histórico de sessão em memória e exportação CSV. A validação física
-                  em bancada e testes de campo com usuários permanecem pendentes.
+                  Demonstração com cenários de teste, histórico de sessão em memória e exportação CSV.
                 </p>
               </div>
               <div className="lp-scope-divider" />
